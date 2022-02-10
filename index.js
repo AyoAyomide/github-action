@@ -1,3 +1,7 @@
 require('dotenv').config()
 
-console.log(process.env.NAME);
+let name = process.env.NAME;
+if (!name) throw "Invalid file name";
+else {
+    console.log(name);
+}
