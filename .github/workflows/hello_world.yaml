@@ -1,0 +1,10 @@
+name: Hello world
+on: [push]
+jobs:
+  echo_hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo Hello world from 'hello_world.yaml'
+        name: Run hello world
