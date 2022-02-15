@@ -1,0 +1,13 @@
+name: Execute index.js file
+on: push
+jobs:
+  Boot-up:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - run: npm install
+      - run: node index.js
+        name: Clone the repo, install nodejs, run npm install and execute node index.js
