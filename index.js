@@ -1,7 +1,3 @@
-require('dotenv').config()
+let username = "Samuel";
 
-let name = process.env.APP_NAME;
-if (!name) throw "Invalid file name";
-else {
-    console.log(name);
-}
+console.log(username);

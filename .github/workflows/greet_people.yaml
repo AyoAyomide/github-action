@@ -1,10 +1,11 @@
-name: Hello world
+name: Say greeting to people
 on: [push]
 jobs:
-  echo_hello-world:
+  Say-hello:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          echo Hello world from 'hello_world.yaml'
+          echo Hello \
+          && echo from 'hello_world.yaml'
         name: Run hello world
