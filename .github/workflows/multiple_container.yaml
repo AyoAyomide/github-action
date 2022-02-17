@@ -1,0 +1,17 @@
+name: Multiple docker containers in steps
+on: push
+
+jobs:
+  Run_Many_Container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node v17 with container 1
+        uses: docker://node:17-alpine3.14
+        run: |
+          node -v
+          car /etc/os-release
+      - name: Use Node v16 with container 2
+        uses: docker://node:16-alpine3.14
+        run: |
+          node -v
+          cat /etc/os-release

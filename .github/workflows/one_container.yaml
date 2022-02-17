@@ -1,12 +1,12 @@
-name: Get Node on one container
-on: push
-jobs:
-  Node_V:
-    runs-on: ubuntu-latest
-    container:
-      image: node:17-alpine3.14
-    steps:
-      - name: Log global node version
-        run: |
-          node -v
-          cat /etc/os-release
+# name: Get Node on one container
+# on: push
+# jobs:
+#   Node_V:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: node:17-alpine3.14
+#     steps:
+#       - name: Log global node version
+#         run: |
+#           node -v
+#           cat /etc/os-release
