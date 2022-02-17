@@ -1,11 +1,11 @@
-name: Say greeting to people
-on: [push]
-jobs:
-  Say-hello:
-    runs-on: ubuntu-latest
-    steps:
-      - shell: bash
-        run: |
-          echo Hello \
-          && echo from 'hello_world.yaml'
-        name: Run hello world
+# name: Say greeting to people
+# on: [push]
+# jobs:
+#   Say-hello:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - shell: bash
+#         run: |
+#           echo Hello \
+#           && echo from 'hello_world.yaml'
+#         name: Run hello world
