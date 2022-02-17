@@ -12,5 +12,5 @@ jobs:
           args: -v
       - name: Use Node v16 with container 2
         uses: docker://node:16-alpine3.14
-        with:
-          cmd: node -v
+        shell: bash
+        run: node -v
