@@ -9,6 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Say greeting
-    - shell: bash
-      run: |
+    - run: |
         echo hello world people
