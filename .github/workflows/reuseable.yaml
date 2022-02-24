@@ -2,13 +2,13 @@ name: Say greeting to people
 
 on: 
   # push:
-  workflow_call
+  workflow_call:
 
 jobs:
   Say-hello:
-    name: Say greeting
     runs-on: ubuntu-latest
     steps:
+    - name: Say greeting
     - shell: bash
       run: |
         echo hello world
