@@ -1,6 +1,7 @@
 name: Say greeting to people
 on: 
-  workflow_call:
+  workflow_call
+  
 jobs:
   Say-hello:
     runs-on: ubuntu-latest
