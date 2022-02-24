@@ -1,16 +1,10 @@
 name: Say greeting to people
 on: 
   workflow_call:
-    inputs:
-      username:
-        required: true
-        type: string
-    secrets:
-      token:
-        required: true
+
 jobs:
   Say-hello:
-    name: Pass input and secrets to my-action
+    name: Say greeting
     runs-on: ubuntu-latest
     steps:
     - shell: bash
