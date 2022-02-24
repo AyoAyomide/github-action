@@ -1,0 +1,10 @@
+name: Say greeting to people
+on: [workflow_call]
+jobs:
+  Say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo Hello world
+        name: Run hello world
