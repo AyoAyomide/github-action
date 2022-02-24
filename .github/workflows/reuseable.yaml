@@ -11,4 +11,4 @@ jobs:
     - name: Say greeting
     - shell: bash
       run: |
-        echo hello world
+        echo hello world people
