@@ -1,6 +1,8 @@
 name: Say greeting to people
+
 on: 
-  workflow_call:
+  push
+  # workflow_call:
 
 jobs:
   Say-hello:
