@@ -11,6 +11,6 @@ jobs:
         name: Checkout
       - run: |
           ls && la -a && pwd
-      - uses: ../actions/echoinput.yml
+      - uses: ./actions/echoinput.yml
         with:
           input-entered: "Hello from development"
