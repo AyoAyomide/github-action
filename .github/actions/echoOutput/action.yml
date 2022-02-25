@@ -2,7 +2,7 @@ name: "Action that send generated output to workflow"
 outputs:
   today-date:
     description: "The date of today"
-    value: ${{steps.date.outputs.date-id}}
+    value: date
 
 runs:
   using: "composite"
