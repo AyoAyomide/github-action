@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout
       - run: |
-          ls && la -a && pwd
+          ls && ls -a && pwd
       - uses: ./actions/echoinput.yml
         with:
           input-entered: "Hello from development"
