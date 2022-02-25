@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job that print provided input
     steps:
+      - uses: actions/checkout@v2
+        name: Checkout
       - run: |
           echo $GITHUB_REPOSITORY
       - uses: ./.github/actions/echoInput
