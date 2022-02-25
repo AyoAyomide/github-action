@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
         name: Checkout
       - run: |
-          echo ${{github.ref}}
-      - uses: ./.github/actions/echoinput.yml
-        with:
-          input-entered: "Hello from development"
+          echo ${{github.action.path}}
+      # - uses: ./.github/actions/echoinput.yml
+      #   with:
+      #     input-entered: "Hello from development"
