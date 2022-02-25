@@ -12,7 +12,7 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Printing.... ${{input.input-entered}}.
+    - run: echo Printing.... ${{inputs.input-entered}}.
       shell: bash
       name: Echo the provided input
     - run: date
