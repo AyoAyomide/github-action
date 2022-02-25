@@ -11,6 +11,6 @@ jobs:
         name: Checkout
       - run: |
           ls .github
-      - uses: .github/actions/echoinput.yml
+      - uses: /.github/actions/echoinput.yml
         with:
           input-entered: "Hello from development"
