@@ -1,0 +1,12 @@
+# A workflow that implement the "composite" action patter
+name: Reuseable Composite Action
+on: [push]
+
+jobs:
+  Print-inputs:
+    runs-on: ubuntu-latest
+    name: A job that print provided input
+    steps:
+      - uses: actions/echoinput.yml
+        with:
+          input-entered: "Hello from development"
