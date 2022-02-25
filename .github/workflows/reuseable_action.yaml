@@ -11,6 +11,6 @@ jobs:
         name: Checkout
       - run: |
           echo $GITHUB_REPOSITORY
-      - uses: ./.github/actions/echoinput
+      - uses: ./.github/actions/echoInput
         with:
           input-entered: "Hello from development"

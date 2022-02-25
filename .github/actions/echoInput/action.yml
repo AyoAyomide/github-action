@@ -1,20 +1,20 @@
-name: Action print input provided
-input:
+name: "Action print input provided"
+inputs:
   input-entered:
     description: "The text to print"
     required: true
     default: "Hello world"
-output:
+outputs:
   today-date:
     description: "The date of today"
-    value:
+    value: date
 
 runs:
   using: "composite"
   steps:
-    - name: Echo the provided input
     - run: echo Printing.... ${{input.input-entered}}.
       shell: bash
-    - name: Echo today-date
+      name: Echo the provided input
     - run: date
       shell: bash
+      name: Echo today-date
