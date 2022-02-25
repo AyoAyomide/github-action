@@ -8,6 +8,9 @@ jobs:
     name: A job that print provided input
     steps:
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/echoinput.yml
+        name: Checkout
+      - run: |
+          ls && la -a && pwd
+      - uses: actions/echoinput.yml
         with:
           input-entered: "Hello from development"
