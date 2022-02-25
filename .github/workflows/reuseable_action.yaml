@@ -24,5 +24,6 @@ jobs:
         name: In prod
       - uses: ./.github/actions/echoInput
         name: In default
-      - run: echo the date is ${{steps.Checkout.outputs.date}}
+      - run: echo the date is ${{ steps.Checkout.outputs.today-date }}
         shell: bash
+        name: Show the date
