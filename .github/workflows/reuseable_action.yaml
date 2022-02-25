@@ -9,8 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Checkout
-      - run: |
-          echo $GITHUB_REPOSITORY
       - uses: ./.github/actions/echoInput
         with:
           input-entered: "Hello from development"
+      - uses: ./.github/actions/echoInput
+        with:
+          input-entered: "Hello from staging"
+      - uses: ./.github/actions/echoInput
+        with:
+          input-entered: "Hello from production"
+      - uses: ./.github/actions/echoInput
