@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job that print provided input
     steps:
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/echoinput.yml
         with:
           input-entered: "Hello from development"
