@@ -2,12 +2,12 @@ name: "Action that send generated output to workflow"
 outputs:
   today-date:
     description: "The date of today"
-    value: ${{steps.date}}
+    value: ${{steps.date.output.date}}
 
 runs:
   using: "composite"
   steps:
-    - run: date
+    - run: echo "::set-output name=date::$(echo date)"
       shell: bash
       name: Return today-date
       id: date
