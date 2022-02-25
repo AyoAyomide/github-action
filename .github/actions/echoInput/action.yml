@@ -4,10 +4,6 @@ inputs:
     description: "The text to print"
     required: true
     default: "Hello world"
-outputs:
-  today-date:
-    description: "The date of today"
-    value: date
 
 runs:
   using: "composite"
@@ -15,6 +11,3 @@ runs:
     - run: echo Printing.... ${{inputs.input-entered}}.
       shell: bash
       name: Echo the provided input
-    - run: date
-      shell: bash
-      name: Echo today-date
