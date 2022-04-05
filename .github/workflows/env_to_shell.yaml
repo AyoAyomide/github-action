@@ -14,5 +14,4 @@ jobs:
         name: Checkout action dir
 
       - name: execute shell file
-        run: |
-          ls -a
+        run: ./.github/cmd/hello.sh
