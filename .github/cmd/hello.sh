@@ -1,3 +1,5 @@
-echo "Hello from shell";
+echo "Hello from shell"
 
-echo $Name
+echo "appname="$Name >>sam.sh
+
+cat sam.sh
