@@ -1,3 +1,3 @@
 echo "Hello from shell";
 
-echo ${ env.Name }
+echo $Name
