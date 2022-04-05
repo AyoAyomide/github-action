@@ -1,0 +1,18 @@
+name: Pass env to shell file
+on: [push]
+
+env:
+  Name: "sharesquare"
+
+jobs:
+  Print-inputs:
+    runs-on: ubuntu-latest
+    name: A job that print provided input
+    steps:
+      - uses: actions/checkout@v2
+        id: Checkout
+        name: Checkout action dir
+
+      - name: execute shell file
+        run: |
+          ls -a
