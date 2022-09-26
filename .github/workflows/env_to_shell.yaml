@@ -1,5 +1,6 @@
 name: Pass env to shell file
-on: [push]
+on:
+  workflow_dispatch:
 
 env:
   Name: "sharesquare"

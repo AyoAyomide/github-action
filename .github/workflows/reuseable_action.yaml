@@ -1,6 +1,8 @@
 # A workflow that implement the "composite" action patter
 name: Reuseable Composite Action
-on: [push]
+on:
+  # push
+  workflow_dispatch:
 
 jobs:
   Print-inputs:
