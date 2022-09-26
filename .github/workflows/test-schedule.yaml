@@ -1,7 +1,7 @@
 name: Check action cron
 on:
   schedule:
-    - cron: "55 13 * * *"
+    - cron: "2/5 * * * *"
 
 env:
   Name: "sharesquare"
