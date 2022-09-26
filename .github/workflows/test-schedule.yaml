@@ -1,0 +1,14 @@
+name: Check action cron
+on:
+  schedule:
+    - cron: "55 13 * * *"
+
+env:
+  Name: "sharesquare"
+
+jobs:
+  RUN-CRON:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Echo time
+        run: echo running action @ {{ github.event.schedule }}
