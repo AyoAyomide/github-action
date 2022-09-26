@@ -1,5 +1,9 @@
 name: Check action cron
 on:
+  push:
+
+  workflow_dispatch:
+
   schedule:
     - cron: "2/5 * * * *"
 
@@ -10,5 +14,10 @@ jobs:
   RUN-CRON:
     runs-on: ubuntu-22.04
     steps:
+      - name: Echo name
+        run: echo hello my name is sam
+        shell: bash
+
       - name: Echo time
-        run: echo running action @ {{ github.event.schedule }}
+        run: echo running action @ ${{ github.event.schedule }}
+        shell: bash
