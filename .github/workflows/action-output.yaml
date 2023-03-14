@@ -11,5 +11,5 @@ jobs:
       - name: custom output
         id: show_output
         run: |
-          echo "::set-output name=custom_output::Hello world"
+          echo "::workflow-command parameter1={data},parameter2={data}::{command value}"
         shell: bash
