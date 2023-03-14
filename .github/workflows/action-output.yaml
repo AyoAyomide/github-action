@@ -1,0 +1,15 @@
+name: Custom action output
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  Action-Output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: custom output
+        id: show_output
+        run: |
+          echo "::set-output name=custom_output::Hello world"
+        shell: bash
