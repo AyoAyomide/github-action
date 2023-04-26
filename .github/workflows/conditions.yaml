@@ -1,0 +1,25 @@
+name: action conditions
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      in_school:
+        type: boolean
+        description: "is in school"
+        required: true
+        default: true
+
+env:
+  is_student: true
+  is_teacher: false
+
+jobs:
+  Run-if:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check one
+        if: github.event.inputs.in_school == 'true' && (env.is_student == 'true' || env.is_teacher == 'true')
+        run: |
+          echo "Hello world"
+        shell: bash
