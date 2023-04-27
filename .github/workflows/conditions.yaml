@@ -20,6 +20,10 @@ jobs:
   Run-if:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          path: main
+          
       - name: check one
         if: github.event.inputs.in_school == 'true' && (env.is_student == 'true' || env.is_teacher == 'true')
         run: |
