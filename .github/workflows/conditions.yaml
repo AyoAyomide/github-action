@@ -10,7 +10,7 @@ on:
         type: boolean
         description: "is in school"
         required: true
-        default: true
+        default: false
 
 env:
   is_student: true
@@ -23,9 +23,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           path: main
-          
+
       - name: check one
-        if: github.event.inputs.in_school == 'true' && (env.is_student == 'true' || env.is_teacher == 'true')
+        if: ${{ github.event.inputs.force != 'true'github.event.inputs.in_school == 'true' && [env.is_student == 'true' || env.is_teacher == 'true'] }}
         run: |
           echo "Hello world"
         shell: bash
