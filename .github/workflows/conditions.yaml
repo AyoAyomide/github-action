@@ -2,6 +2,8 @@ name: action conditions
 
 on:
   push:
+    branches:
+      - "main"
   workflow_dispatch:
     inputs:
       in_school:
