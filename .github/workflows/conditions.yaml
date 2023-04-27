@@ -25,7 +25,7 @@ jobs:
           path: main
 
       - name: check one
-        if: ${{ github.event.inputs.force != 'true' && (env.is_student == 'true' || env.is_teacher == 'true') }}
+        if: ${{ github.event.inputs.in_school == 'true' && (env.is_student == 'true' || env.is_teacher == 'true') }}
         run: |
           echo "Hello world"
         shell: bash
