@@ -15,7 +15,7 @@ on:
       my_output:
         description: "my output"
         required: true
-        default: "empty"
+        default: "Done processing"
 
 env:
   is_student: true
@@ -35,6 +35,5 @@ jobs:
 
       - name: show value
         run: | 
-          echo "::error file=app.js,line=1::Missing semicolon"
-          echo "::set-output name=my_output::This is my output message"
+          echo "::error title=Missing semicolon"
         shell: bash
