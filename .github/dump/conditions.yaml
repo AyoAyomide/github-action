@@ -11,6 +11,11 @@ on:
         description: "is in school"
         required: true
         default: false
+    outputs:
+      my_output:
+        description: "my output"
+        required: true
+        default: "empty"
 
 env:
   is_student: true
