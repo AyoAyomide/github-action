@@ -11,6 +11,5 @@ jobs:
       - name: custom output
         id: show_output
         run: |
-          echo "Hello world"
-          echo "::workflow-command parameter1={data},parameter2={data}::{command value}"
+          echo "HelloWorld" >> $GITHUB_STEP_SUMMARY
         shell: bash
