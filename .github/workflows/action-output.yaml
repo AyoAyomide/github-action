@@ -11,5 +11,6 @@ jobs:
       - name: custom output
         id: show_output
         run: |
-          echo "HelloWorld" >> $GITHUB_STEP_SUMMARY
+          echo "Hello=World" >> $GITHUB_ENV;
+          echo ${{ env.Hello }};
         shell: bash
