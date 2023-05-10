@@ -11,7 +11,7 @@ jobs:
       - name: custom output
         id: show_output
         run: |
-          echo "Hello=World" >> $GITHUB_ENV;
+          echo "Hello=002" >> $GITHUB_ENV;
           echo ${{ env.Hello }};
         shell: bash
 
