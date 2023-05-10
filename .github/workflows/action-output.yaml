@@ -14,3 +14,8 @@ jobs:
           echo "Hello=World" >> $GITHUB_ENV;
           echo ${{ env.Hello }};
         shell: bash
+
+      - name: data value
+        run: |
+          echo ${{ env.Hello }};
+        shell: bash
