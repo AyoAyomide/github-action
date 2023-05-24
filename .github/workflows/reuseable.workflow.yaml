@@ -19,13 +19,17 @@ jobs:
       #   shell: bash
 
       - name: Set coverage (act support)
-        if: ${{ secrets.COVERAGE_TARGET }}
+        env: 
+          COVERAGE_TARGET: ${{ secrets.COVERAGE_TARGET }}
+        if: ${{ env.COVERAGE_TARGET }}
         run: |
           echo "COVERAGE_TARGET=${{ secrets.COVERAGE_TARGET }}" >> $GITHUB_ENV
         shell: bash
 
       - name: (CI) Set coverage
-        if: ${{ ! secrets.COVERAGE_TARGET }}
+        env:
+          COVERAGE_TARGET: false
+        if: ${{ env.COVERAGE_TARGET }}
         run: |
           echo "COVERAGE_TARGET=${{ vars.COVERAGE_TARGET }}" >> $GITHUB_ENV;
         shell: bash
