@@ -1,13 +1,20 @@
 name: "Action that send generated output to workflow"
-outputs:
-  today-date:
-    description: "The date of today"
-    value: date
+env:
+  MyName: "Samuel"
+# outputs:
+#   today-date:
+#     description: "The date of today"
+#     value: date
 
 runs:
   using: "composite"
   steps:
-    - run: echo "::set-output name=date-id::$(date)"
+    - name: Say my name
+      run: |
+        echo ${{ env.MyName }}
       shell: bash
-      name: Return today-date
-      id: date
+      
+    # - run: echo "::set-output name=date-id::$(date)"
+    #   shell: bash
+    #   name: Return today-date
+    #   id: date

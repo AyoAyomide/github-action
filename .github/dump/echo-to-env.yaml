@@ -1,0 +1,19 @@
+name: "Simple act"
+on:
+  push:
+
+jobs:
+  LocalAction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Env check
+        run: |
+          echo MyName=Mike >> $GITHUB_ENV
+        shell: bash
+
+      - name: Get value
+        run: |
+          echo ${{ env.MyName }}
+        shell: bash

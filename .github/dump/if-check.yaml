@@ -1,0 +1,25 @@
+name: "Simple act"
+on:
+  push:
+
+jobs:
+  LocalAction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set coverage (act support)
+        env: 
+          COVERAGE_TARGET: ${{ secrets.COVERAGE_TARGET }}
+        if: ${{ env.COVERAGE_TARGET }}
+        run: |
+          echo "COVERAGE_TARGET=${{ secrets.COVERAGE_TARGET }}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: (CI) Set coverage
+        env:
+          COVERAGE_TARGET: ${{ secrets.COVERAGE_TARGET }}
+        if: ${{ env.COVERAGE_TARGET == '' }}
+        run: |
+          echo COVERAGE_TARGET=${{ vars.COVERAGE_TARGET }} >> $GITHUB_ENV;
+        shell: bash
