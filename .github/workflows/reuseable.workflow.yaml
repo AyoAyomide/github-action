@@ -28,8 +28,8 @@ jobs:
 
       - name: (CI) Set coverage
         env:
-          COVERAGE_TARGET: false
-        if: ${{ env.COVERAGE_TARGET }}
+          COVERAGE_TARGET: ${{ secrets.COVERAGE_TARGET }}
+        if: ${{ env.COVERAGE_TARGET == '' }}
         run: |
           echo "COVERAGE_TARGET=${{ vars.COVERAGE_TARGET }}" >> $GITHUB_ENV;
         shell: bash
