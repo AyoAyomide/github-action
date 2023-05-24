@@ -34,6 +34,11 @@ jobs:
           echo COVERAGE_TARGET=${{ vars.COVERAGE_TARGET }} >> $GITHUB_ENV;
         shell: bash
 
+      - name: check value
+        run: |
+          echo ${{ env.COVERAGE_TARGET }}
+        shell: bash
+
       # - name: demo value
       #   run: |
       #     if [ ${{ secrets.name }} ]; then
