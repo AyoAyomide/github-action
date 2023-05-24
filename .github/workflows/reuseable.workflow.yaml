@@ -1,0 +1,50 @@
+name: "Simple act"
+on:
+  push:
+
+jobs:
+  LocalAction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # - name: Env check
+      #   run: |
+      #     echo MyName=Mike >> $GITHUB_ENV
+      #   shell: bash
+
+      # - name: Get value
+      #   run: |
+      #     echo ${{ env.MyName }}
+      #   shell: bash
+
+      - name: Set coverage (act support)
+        if: ${{ secrets.COVERAGE_TARGET }}
+        run: |
+          echo "COVERAGE_TARGET=${{ secrets.COVERAGE_TARGET }}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: (CI) Set coverage
+        if: ${{ ! secrets.COVERAGE_TARGET }}
+        run: |
+          echo "COVERAGE_TARGET=${{ vars.COVERAGE_TARGET }}" >> $GITHUB_ENV;
+        shell: bash
+
+      # - name: demo value
+      #   run: |
+      #     if [ ${{ secrets.name }} ]; then
+      #      echo using secret;
+      #     elif [ ${{ vars.name }} ]; then
+      #      echo using vars;
+      #     fi;
+      #   shell: bash
+
+      # - name: Test 1
+      #   if: ${{ secrets.name }}
+      #   run: echo I should run
+
+      # - name: Test 2
+      #   if: ${{ ! secrets.name }}
+      #   run: echo  ${{ vars.name }};
+
+      # - uses: ./.github/actions/echoOutput
