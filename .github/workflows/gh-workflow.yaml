@@ -16,7 +16,7 @@ jobs:
       - run: gh run list --json databaseId,createdAt --limit ${{ env.LIMIT }} > data.json
 
       - run: |
-          jq --arg days ${{ env.DAYS }} '.[] | select((now - (.createdAt | fromdate)) > ($days | tonumber)) | .databaseId' data.json |
+          jq --argjson days ${{ env.DAYS }} '.[] | select((now - ($days * 86400)) > (.createdAt | fromdate)) | .databaseId' data.json |
           xargs -IID gh api \
             "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" \
            -X DELETE
