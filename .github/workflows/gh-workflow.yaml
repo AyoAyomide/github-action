@@ -1,0 +1,14 @@
+name: "Delete workflow runs"
+on:
+  push:
+
+env:
+  GITHUB_TOKEN : ${{ secrets.AUTH_GITHUB_TOKEN }}
+
+jobs:
+  FetchWorkflow:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: gh run list --limit 200

@@ -8,4 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: ./.github/actions/echoOutput
+      - name: Demo
+        run: |
+          php -v
+        shell: bash
+
+      # - uses: ./.github/actions/echoOutput
