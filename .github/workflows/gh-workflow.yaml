@@ -4,7 +4,7 @@ on:
 
 env:
   GITHUB_TOKEN : ${{ secrets.AUTH_GITHUB_TOKEN }}
-  LIMIT: 500
+  LIMIT: 1000
   DAYS: 30
 
 jobs:
@@ -15,7 +15,8 @@ jobs:
 
       - run: gh run list --json databaseId,createdAt --limit ${{ env.LIMIT }} > data.json
 
-      - run: |
+      - name: Workflow delete
+        run: |
           jq --argjson days ${{ env.DAYS }} '.[] | select((now - ($days * 86400)) > (.createdAt | fromdate)) | .databaseId' data.json |
           xargs -IID gh api \
             "repos/$(gh repo view --json nameWithOwner -q .nameWithOwner)/actions/runs/ID" \
