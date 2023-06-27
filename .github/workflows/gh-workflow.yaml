@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: gh run list --json databaseId,createdAt --limit ${{ env.LIMIT }}> data.json
+      - run: gh run list --json databaseId,createdAt --limit ${{ env.LIMIT }} > data.json
 
       - run: |
           jq --arg days ${{ env.DAYS }} '.[] | select((now - (.createdAt | fromdate)) > ($days | tonumber)) | .databaseId' data.json |
