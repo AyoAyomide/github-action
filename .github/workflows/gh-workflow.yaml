@@ -8,7 +8,7 @@ env:
   DAYS: 30
 
 jobs:
-  FetchWorkflow:
+  gh_drop_workflow:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
